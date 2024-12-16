@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenido</h1>
+        <p>Gestiona tus tareas de manera eficiente</p>
+    </header>
+   
+    <div class="container">
+        <!-- Formulario para Agregar Tareas -->
+        <section class="formulario">
+            <h2>Agregar Nueva Tarea</h2>
+            <form action="/agregar" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre de la tarea" required>
+                <input type="text" name="descripcion" placeholder="Descripción" required>
+                <button type="submit" class="apply-btn">Agregar Tarea</button>
+            </form>            
+        </section>
+
+        <!-- Botones para importar y exportar las tareas-->
+        <section class="acciones">
+            <form action="/importar" method="POST" enctype="multipart/form-data">
+                <label for="archivo" class="apply-btn">Importar Tareas</label>
+                <input type="file" id="archivo" name="archivo" accept=".csv" hidden>
+                <button type="submit" class="apply-btn">Subir</button>
+            </form>
+            <a href="/exportar" class="apply-btn">Exportar Tareas</a>
+        </section>
+
+        <h2>Tus Tareas</h2>
+        <div class="lista_tareas">
+            {% for tarea in tareas %}
+            <div class="tarea {% if tarea.estado %}completada{% else %}pendiente{% endif %}">
+                <div>
+                    <p><strong>{{ tarea.nombre }}</strong></p>
+                    <p>{{ tarea.descripcion }}</p>
+                </div>
+                <div>
+                    <form action="/marcar_completada/{{ tarea.id }}" method="POST">
+                        <label>
+                            <input type="checkbox" name="completada" {% if tarea.estado %}checked{% endif %} 
+                            onchange="this.form.submit()"> Completada
+                        </label>
+                    </form>
+                    <a href="/eliminar/{{ tarea.id }}" class="eliminar-btn">Eliminar</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Gestión de Tareas</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+header {
+    background-color: #635BFF;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.formulario {
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.formulario button {
+    align-self: flex-start;
+    background-color: #635BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #5049d1;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.acciones .apply-btn {
+    display: inline-block;
+    background-color: #FF8C00;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.acciones .apply-btn:hover {
+    background-color: #e07c00;
+}
+
+.acciones input[type="file"] {
+    display: none;
+}
+
+.lista_tareas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tarea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.tarea:hover {
+    transform: translateY(-5px);
+}
+
+.tarea.completada {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+}
+
+.tarea.pendiente {
+    background-color: #f8d7da;
+    border-left: 5px solid #dc3545;
+}
+
+.tarea div p {
+    margin: 5px 0;
+}
+
+button, .eliminar-btn {
+    background-color: #FF8C00;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+button:hover, .eliminar-btn:hover {
+    background-color: #e07c00;
+}
+
+/* Form and Input Checkbox */
+input[type="checkbox"] {
+    margin-right: 5px;
+    transform: scale(1.2);
+}
+
+.apply-btn {
+    background-color: #635BFF;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.apply-btn:hover {
+    background-color: #5049d1;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+}

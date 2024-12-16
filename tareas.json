@@ -1,0 +1,1 @@
+[{"id": 1, "nombre": "Estudiar Python", "descripcion": "Repasar conceptos b\u00e1sicos", "estado": false}, {"id": 2, "nombre": "Hacer ejercicio", "descripcion": "30 minutos de cardio", "estado": false}, {"id": 3, "nombre": "Taller de c\u00e1lculo", "descripcion": "Terminar el taller antes de las 10:00am y enviarlo", "estado": true}]
